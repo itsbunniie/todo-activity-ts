@@ -1,11 +1,14 @@
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { ITodo } from "../interfaces/todo";
 
-const Item = () => {
+const Item = (props: ITodo) => {
+  const { task, id } = props;
+
   return (
-    <div className="item-container incomplete">
+    <div className={`item-container incomplete`}>
       <div className="left-item-controls">
         <input type="checkbox" />
-        <div>Task</div>
+        <div>{task}</div>
       </div>
       <div className="right-item-controls">
         <button>
